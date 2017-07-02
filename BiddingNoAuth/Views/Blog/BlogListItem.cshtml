@@ -1,0 +1,32 @@
+﻿@model Blogging.Services.ImplementedInterfaces.InputModels.BlogListItemViewModel
+
+@{
+
+    Func<string, int, string> limitStringLength = (str, limit) =>
+    {
+        if (str.Length > 30)
+        {
+            return str.Substring(0, 30) + "...";
+        }
+        return str;
+    };
+
+}
+
+<li class="blog-list-item">
+    <h4 class="blog-list-item__header">
+        <a class="blog-list-item__title" 
+        href="@Url.Action("Detail", "Blog", new {id = Model.Id})"
+        text="@Model.Title"
+        >@limitStringLength(Model.Title, 30)</a>
+    </h4>
+
+    <p class="blog-list-item__content">
+        @limitStringLength(Model.Content, 200)
+    </p>
+
+    <div class="blog-list-item__footer">
+        @Html.ActionLink("评论", "Comment", "Blog", new {blogId = Model.Id}, new {@class="btn btn-default btn-xs"})
+        <span class="blog-list-item__created"> @Model.Created.ToString("yy年MM月dd日")</span>
+    </div>
+</li>
