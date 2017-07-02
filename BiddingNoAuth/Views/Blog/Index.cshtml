@@ -1,0 +1,64 @@
+﻿@model List<Blogging.Services.ImplementedInterfaces.InputModels.BlogListItemViewModel>
+
+@{
+    ViewBag.Title = "博客列表";
+}
+
+@section styles{
+    <style>
+        .create-blog {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .blog-list {
+            margin: 10px 0 10px 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .blog-list li{
+            margin: 10px 0 10px 0;
+            padding: 10px 0 10px 0;
+        }
+
+        .blog-list li:not(:last-child) {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .blog-list-item__title {
+            border-bottom: 1px dot-dash lightblue;
+        }
+
+        .blog-list-item__created {
+            color: grey;
+        }
+    </style>
+}
+
+<div class="row">
+    <div class="col-lg-10">
+        <h2>@ViewBag.Title </h2>
+
+        <div>
+            @Html.ActionLink("发布", "Create", "Blog", null, new { @class = "btn btn-info" })
+        </div>
+
+        @if (Model.Count == 0)
+            {
+            <div role="alert" class="alert alert-warning">
+                暂无博客， 请点击
+                @Html.ActionLink("发布", "Create", "Blog", null, new { @class = "create-blog" })
+            </div>
+        }
+        else
+        {
+            <ul class="blog-list">
+                @foreach (var blog in Model)
+                {
+                    Html.RenderPartial("BlogListItem", blog);
+                }
+            </ul>
+        }
+    </div>
+</div>

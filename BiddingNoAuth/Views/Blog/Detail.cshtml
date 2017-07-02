@@ -1,0 +1,60 @@
+﻿@model Blogging.Services.ImplementedInterfaces.InputModels.BlogDetailViewModel
+
+@{
+    ViewBag.Title = "博客详情";
+}
+
+@section styles
+{
+    <style>
+        .blog-detail__title {
+            color: blue;
+            border-bottom: 1px dot-dash lightblue;
+        }
+
+        .blog-detail__content {
+            margin: 10px 0 10px 0;
+            padding: 10px 10px 10px 10px;
+            background-color: #f6f6f6;
+        }
+
+        .blog-detail__comments {
+            margin: 10px 0 10px 0;
+            border-top: 1px solid #f0f0f0;
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .blog-detail__comments li {
+                font-size: 10px;
+                padding: 10px 0 10px 0;
+            }
+
+        .blog-detail__comment-created {
+            color: grey;
+        }
+    </style>
+}
+
+<div class="row">
+    <div class="col-lg-10">
+        <h2>@ViewBag.Title </h2>
+        <div class="blog-detail">
+            <h3 class="blog-detail__title">@Model.Title</h3>
+            <p class="blog-detail__content"> @Model.Content </p>
+            <div class="blog-detail__footer">
+                @Html.ActionLink("评论", "Comment", "Blog", new { blogId = Model.Id }, new { @class = "btn btn-default btn-xs" })
+                <span class="blog-detail__created"> @Model.Created.ToString("yy年MM月dd日")</span>
+            </div>
+            <ul class="blog-detail__comments">
+                @foreach (var comment in Model.Comments)
+                {
+                    <li>
+                        <p>@comment.Content</p>
+                        <span class="blog-detail__comment-created"> @Model.Created.ToString("yy年MM月dd日")</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+E:\VSProjects\BiddingNoAuth\Blogging.Data\bin\Debug\Blogging.Data.dll.config
+E:\VSProjects\BiddingNoAuth\Blogging.Data\bin\Debug\Blogging.Data.dll
+E:\VSProjects\BiddingNoAuth\Blogging.Data\bin\Debug\Blogging.Data.pdb
+E:\VSProjects\BiddingNoAuth\Blogging.Data\bin\Debug\EntityFramework.dll
+E:\VSProjects\BiddingNoAuth\Blogging.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\VSProjects\BiddingNoAuth\Blogging.Data\bin\Debug\EntityFramework.xml
+E:\VSProjects\BiddingNoAuth\Blogging.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\VSProjects\BiddingNoAuth\Blogging.Data\obj\Debug\Blogging.Data.csprojResolveAssemblyReference.cache
+E:\VSProjects\BiddingNoAuth\Blogging.Data\obj\Debug\Blogging.Data.dll
+E:\VSProjects\BiddingNoAuth\Blogging.Data\obj\Debug\Blogging.Data.pdb
+E:\VSProjects\BiddingNoAuth\Blogging.Data\obj\Debug\Blogging.Data.Migrations.initial.resources
+E:\VSProjects\BiddingNoAuth\Blogging.Data\obj\Debug\Blogging.Data.csproj.GenerateResource.Cache

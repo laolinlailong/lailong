@@ -1,0 +1,43 @@
+﻿@model Blogging.Services.ImplementedInterfaces.InputModels.BlogInputModel
+
+@{
+    ViewBag.Title = "发布博客";
+}
+
+@section styles{
+}
+
+<div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+
+        <h2>@ViewBag.Title </h2>
+
+        <br />
+
+        @using (Html.BeginForm("Create", "Blog", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true);
+
+            <div class="input-group">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Title)
+            </div>
+
+            <div class="input-group">
+                @Html.LabelFor(m => m.Content)
+                @Html.TextAreaFor(m => m.Content, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Content)
+            </div>
+
+            <input type="submit" value="发布" class="btn btn-default" />
+        }
+
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
